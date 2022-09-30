@@ -1,0 +1,61 @@
+.homelink{
+    transition: text-shadow 0.15s ease, -webkit-text-stroke-width 0.15s ease, -webkit-text-stroke-color 0.15s ease;
+    text-align: center;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1.95rem;
+    margin-left: 15px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 1px 2px 6px white;
+  }
+  
+  .homelink:hover,
+  .homelink:focus,
+  .homelink:active {
+    transition: text-shadow 0.15s ease, -webkit-text-stroke-width 0.15s ease, -webkit-text-stroke-color 0.15s ease;
+    text-shadow: 1px 2px 6px #ffff64;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffff64;
+  }
+  
+  .header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .header {
+    height: 5rem;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    border-bottom-color:#444;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .header div {
+    position: relative;
+    margin-left: auto;
+  }
+
+  .header div a {
+    transition: color 0.15s ease, text-decoration 0.15s ease;
+    padding-right: 30px;
+    text-align: center;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .header div a:hover,
+  .header div a:focus,
+  .header div a:active {
+    transition: color 0.15s ease, text-decoration 0.15s ease;
+    color: #ffff64;
+    text-decoration: underline;
+  }
