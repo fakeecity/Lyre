@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 async function getQuery (query: any, pageNum: any) {
   try {
-    const response = await (await fetch(`https://api.genius.com/searchapi.genius.com/search?per_page=20&q=${encodeURIComponent(query.search)}`,
+    const response = await (await fetch(`https://api.genius.com/search?per_page=20&q=${encodeURIComponent(query.search)}`,
     { 
       method: 'GET',
       headers: {
@@ -17,6 +17,9 @@ async function getQuery (query: any, pageNum: any) {
         'Content-Type': 'application/json'
       }
     })).json()
+  }
+  catch {
+    return 'error'
   }
 }
 
@@ -37,7 +40,7 @@ export async function getServerSideProps(context: any) {
       query.search = query.feat
     }
   }
-  const response = await (await fetch(`https://api.genius.com/searchapi.genius.com/search?per_page=20&q=${encodeURIComponent(query.search)}`,
+  const response = await (await fetch(`https://api.genius.com/search?per_page=20&q=${encodeURIComponent(query.search)}`,
   { 
     method: 'GET',
     headers: {
@@ -46,9 +49,11 @@ export async function getServerSideProps(context: any) {
     }
   })).json()
 
+  console.log(response)
+
   const results = response.response.hits;
 
-  if(results === []) {
+  if(results.length == 0) {
     return {
       props: {results}
     }
@@ -107,7 +112,7 @@ export async function getServerSideProps(context: any) {
       if(results[index] === null) {
         continue;
       }
-      if (results[index].result.featured_artists === []) {
+      if (results[index].result.featured_artists.length == 0) {
         results[index] = null;
       }
       else {
