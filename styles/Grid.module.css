@@ -1,12 +1,23 @@
 .outer {
+    margin-top: 20px;
+    max-width: 80%;
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
-    
+    justify-content: center;
 }
 
 .inner {
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
+    margin: 4px 4px 4px 4px;
+}
+
+.thumbnail {
+    width: 100px;
+}
+
+.mainData {
+    color: white;
 }
