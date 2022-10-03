@@ -12,12 +12,18 @@
     border: 2px solid white;
     padding: 20px;
     margin: 4px 4px 4px 4px;
+    min-width: 240px;
+    color: white
+}
+
+.inner:hover,
+.inner:focus,
+.inner:active {
+    transition: color 0.15s ease, border-color 0.15s ease;
+    color: #ffff64;
+    border-color: #ffff64;
 }
 
 .thumbnail {
     width: 100px;
-}
-
-.mainData {
-    color: white;
 }
