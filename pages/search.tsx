@@ -1,13 +1,10 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import SearchBar from '../modules/searchbar'
 import {Header} from '../modules/header'
-import Router from 'next/router'
-import { useRouter } from 'next/router'
+import {formatResults} from '../modules/resultsgrid'
 
-async function getQuery (query: any, pageNum: any) {
+/*async function getQuery (query: any, pageNum: any) {
   try {
     const response = await (await fetch(`https://api.genius.com/search?per_page=20&q=${encodeURIComponent(query.search)}`,
     { 
@@ -25,7 +22,7 @@ async function getQuery (query: any, pageNum: any) {
 
 async function parseParams (query: any) {
 
-}
+}*/
 
 export async function getServerSideProps(context: any) {
   const query = context.query;
@@ -134,6 +131,8 @@ export async function getServerSideProps(context: any) {
 }
 const Search: NextPage = ( {parsedResults}: any ) => {
 
+  const final = formatResults(parsedResults)
+
   return (
     <div className={styles.container}>
 
@@ -150,7 +149,7 @@ const Search: NextPage = ( {parsedResults}: any ) => {
 
         <SearchBar />
 
-        <p className={styles.description}>{JSON.stringify(parsedResults)}</p>
+        {final}
 
       </main>
     </div>

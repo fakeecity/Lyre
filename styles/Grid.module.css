@@ -1,0 +1,12 @@
+.outer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    
+}
+
+.inner {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+}
