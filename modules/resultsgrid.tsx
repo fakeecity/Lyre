@@ -3,6 +3,7 @@ import styles from '../styles/Grid.module.css'
 export const formatResults = (p: any) => {
     if(p == null) {
         return (<div className={styles.outer}>
+            <p>No Results. Try widening your search criteria.</p>
         </div>)
     }
     const results = []

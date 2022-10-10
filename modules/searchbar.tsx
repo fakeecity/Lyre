@@ -46,7 +46,7 @@ export default function PageWithJSbasedForm() {
 
   return (
     <form onSubmit={handleSubmit} className={styles["webflow-style-input"]}>
-      <input className="" type="text" id="query" placeholder="artist: Bladee, Ghost of October"></input>
+      <input className="" autoComplete="off" type="text" id="query" placeholder="artist: Bladee, Ghost of October"></input>
       <button type="submit">&#x21E8;</button>
     </form>
   )
